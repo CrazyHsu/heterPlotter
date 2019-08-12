@@ -37,11 +37,13 @@ cd test
 python ../scripts/heterPlotter.py -g ../data/chr3.gtf -i 3:158397000-158598000 -hp ../data/test.hapmap -gw ../data/test.gwas -a ../data/anno.txt -pmin 7 -pmax 14 -o example.png
 ```
 Then, the example.png, targetGene.anno(annotation of the genes which include in the region you input) and several temporal files are generated!
+
 ## Prerequisitions
 You will need to install the python packages prerequisitely:
 
 1. [matplotlib(>2.30)](https://matplotlib.org/)
 1. [pandas(>0.20)](https://pandas.pydata.org/)
+
 ## Features
  1. You can use ```buildIndex.py``` to build index file for your big hapmap file or GWAS file.
     
@@ -58,6 +60,10 @@ You will need to install the python packages prerequisitely:
     ```convertHp2Num.py [-h] [-hp HAPMAP]````
     ####```-hp/--hapmap HAPMAP CONTAINER```
     This is the config file which contains the absolute path of hapmap files ora part section of hapmap file.
+
+## Output
+This is the example output of *heterPlotter*
+![test.png](test.png "test.png")
 
 ## Issues
 
