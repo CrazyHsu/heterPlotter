@@ -1,7 +1,7 @@
 # heterPlotter
-## DESCIPTION
+## Description
 *heterPlotter* package can plot heterozygosity information of hapmap(female and F1) files and pvalue information you use the same hapmap file to calculate GWAS, besides it can also draw the relative gene feature on the top of the plot.
-## USAGE:
+## Usage
 You can run this *heterPlotter* package follow the below instructions!
 ```
 heterPlotter.py [-h] [-g GTF] [-i INTERVAL] [-a ANNO] [-idx INDEX]
@@ -47,18 +47,22 @@ You will need to install the python packages prerequisitely:
 ## Features
  1. You can use ```buildIndex.py``` to build index file for your big hapmap file or GWAS file.
     
-    ```python buildIndex.py [-h] [-bf BIGFILE] [-idx INDEX] [-ft FILETYPE] [-o OUT]```
-    ####```-bf/--bigfile``` HAPMAP/GWAS BIGFILE CONTAINER
+    ```shell
+    python buildIndex.py [-h] [-bf BIGFILE] [-idx INDEX] [-ft FILETYPE] [-o OUT]
+    -bf/--bigfile HAPMAP/GWAS BIGFILE CONTAINER
     This is the config file which contains the absolute path of hapmap/GWAS files.
-    ####```-ft/--fileType``` FILETYPE
+    -ft/--fileType FILETYPE
     The number of the file type you want to build index.'1' refer to hapmap file, and '2' refer to gwas file.
-    ####```-idx/--index``` SNP NUMBER
+    -idx/--index SNP NUMBER
     The number of SNPs you want to specified in each bin. Default: 1000.
+    ```
 
 2. You can use ```convertHp2Num.py``` to convert the alphabetic hapmap file to numeric hapmap file.
 
-    ```convertHp2Num.py [-h] [-hp HAPMAP]````
-    ####```-hp/--hapmap HAPMAP CONTAINER```
+    ```shell
+    convertHp2Num.py [-h] [-hp HAPMAP]
+    -hp/--hapmap HAPMAP CONTAINER
+    ```
     This is the config file which contains the absolute path of hapmap files ora part section of hapmap file.
 
 ## Output
