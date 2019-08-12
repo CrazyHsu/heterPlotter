@@ -1,46 +1,48 @@
-#heterPlotter
-##DESCIPTION
+# heterPlotter
+## DESCIPTION
 *heterPlotter* package can plot heterozygosity information of hapmap(female and F1) files and pvalue information you use the same hapmap file to calculate GWAS, besides it can also draw the relative gene feature on the top of the plot.
-##USAGE:
+## USAGE:
 You can run this *heterPlotter* package follow the below instructions!
 ```
 heterPlotter.py [-h] [-g GTF] [-i INTERVAL] [-a ANNO] [-idx INDEX]
                 [-hp HAPMAP] [-gw GWAS] [-pmax PVALUEMAX]
                 [-pmin PVALUEMIN] [-o OUT]
 ```
-##Essential Options
-####```-g/--gtf``` GTF FILE
+## Essential Options
+```shell 
+-g/--gtf GTF FILE
 This is the gtf file the species you specified.
-####```-i/--interval``` INTERVAL
+-i/--interval INTERVAL
 This is the interval you specified.Eg: 8:10000-20000.
-####```-a/--anno``` ANNOTATION FILE
+-a/--anno ANNOTATION FILE
 This is the annotation file you should provide.
-####```-idx/--index``` SNP NUMBER
+-idx/--index SNP NUMBER
 The number of SNPs you want to specified in each bin. Default: 1000.
-####```-hp/--hapmap``` HAPMAP CONTAINER
+-hp/--hapmap HAPMAP CONTAINER
 This is the config file which contains the absolute path of hapmap files.
-####```-gw/--gwas``` GWAS CONTAINER
+-gw/--gwas GWAS CONTAINER
 This is the config file which contains the absolute path of gwas files.
-####```-pmax/--pvalueMax``` MAX PVALUE
+-pmax/--pvalueMax MAX PVALUE
 This is the max pvalue you specified to draw the plot. Default is 15.
-####```-pmin/--pvalueMin``` MIN PVALUE
+-pmin/--pvalueMin MIN PVALUE
 This is the min pvalue you specified to draw the plot. Default is 5.
-####```-o/--out``` FIGURE OUT
+-o/--out FIGURE OUT
 The output figure you want to specified!
+```
 
 Finally you simply run the *heterPlotter* using example data in *data* directory by typing:
-```
+```shell
 mkdir test
 cd test
 python ../scripts/heterPlotter.py -g ../data/chr3.gtf -i 3:158397000-158598000 -hp ../data/test.hapmap -gw ../data/test.gwas -a ../data/anno.txt -pmin 7 -pmax 14 -o example.png
 ```
 Then, the example.png, targetGene.anno(annotation of the genes which include in the region you input) and several temporal files are generated!
-##Prerequisitions
+## Prerequisitions
 You will need to install the python packages prerequisitely:
 
 1. [matplotlib(>2.30)](https://matplotlib.org/)
 1. [pandas(>0.20)](https://pandas.pydata.org/)
-##Features
+## Features
  1. You can use ```buildIndex.py``` to build index file for your big hapmap file or GWAS file.
     
     ```python buildIndex.py [-h] [-bf BIGFILE] [-idx INDEX] [-ft FILETYPE] [-o OUT]```
@@ -57,10 +59,11 @@ You will need to install the python packages prerequisitely:
     ####```-hp/--hapmap HAPMAP CONTAINER```
     This is the config file which contains the absolute path of hapmap files ora part section of hapmap file.
 
-##Issues
+## Issues
+
 1. You may come across the issue as following:
 
-```
+```shell
 Traceback (most recent call last):
   File "example.py", line 7, in <module>
     plt.scatter(x, y, s=20)
@@ -83,13 +86,12 @@ _tkinter.TclError: no display name and no $DISPLAY environment variable
 
 Then you can refer to this answer from [stackOverflow](https://stackoverflow.com/questions/37604289/tkinter-tclerror-no-display-name-and-no-display-environment-variable).
 
-##Notes
+## Notes
 1. The test.hapmap/test.gwas file is the path container of your hapmap files, one path per line, like below:
 > /home/xufeng/xufeng/lab_member/jiangshan/heterPlotter/chr3_female
 > /home/xufeng/xufeng/lab_member/jiangshan/heterPlotter/chr3_MG_1522
 > 
 > ...
-##Debug
+## Debug
 Any questions are appreciated, you can contact me via: crazyhsu9527@gmail.com or QQ:369630596.
-
 
